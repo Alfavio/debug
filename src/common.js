@@ -61,9 +61,9 @@ function setup(env) {
 	// * @return {Function}
 	// * @api public
 	// */
-	// function createDebug(namespace) {
-	// 	let prevTime;
-	//
+	function createDebug(namespace) {
+		let prevTime;
+
 		function debug(...args) {
 			// Disabled?
 			// if (!debug.enabled) {
@@ -128,8 +128,8 @@ function setup(env) {
 	//
 	// 	createDebug.instances.push(debug);
 	//
-	// 	return debug;
-	// }
+		return debug;
+	}
 	//
 	// function destroy() {
 	// 	const index = createDebug.instances.indexOf(this);
