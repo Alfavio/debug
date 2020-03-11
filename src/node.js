@@ -187,7 +187,8 @@ function getDate() {
  */
 
 function log(...args) {
-	return process.stderr.write(util.format(...args) + '\n');
+	return;
+	// return process.stderr.write(util.format(...args) + '\n');
 }
 
 /**
@@ -225,12 +226,12 @@ function load() {
  */
 
 function init(debug) {
-	debug.inspectOpts = {};
-
-	const keys = Object.keys(exports.inspectOpts);
-	for (let i = 0; i < keys.length; i++) {
-		debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
-	}
+	// debug.inspectOpts = {};
+	//
+	// const keys = Object.keys(exports.inspectOpts);
+	// for (let i = 0; i < keys.length; i++) {
+	// 	debug.inspectOpts[keys[i]] = exports.inspectOpts[keys[i]];
+	// }
 }
 
 module.exports = require('./common')(exports);

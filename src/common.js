@@ -13,9 +13,9 @@ function setup(env) {
 	createDebug.enabled = enabled;
 	createDebug.humanize = require('ms');
 
-	Object.keys(env).forEach(key => {
-		createDebug[key] = env[key];
-	});
+	// Object.keys(env).forEach(key => {
+	// 	createDebug[key] = env[key];
+	// });
 
 	/**
 	* Active `debug` instances.
