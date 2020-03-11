@@ -242,17 +242,17 @@ module.exports = require('./common')(exports);
  * Map %o to `util.inspect()`, all on a single line.
  */
 
-formatters.o = function (v) {
+// formatters.o = function (v) {
 	// this.inspectOpts.colors = this.useColors;
 	// return util.inspect(v, this.inspectOpts)
 	// 	.replace(/\s*\n\s*/g, ' ');
-};
+// };
 
 /**
  * Map %O to `util.inspect()`, allowing multiple lines if needed.
  */
 
-formatters.O = function (v) {
+// formatters.O = function (v) {
 	// this.inspectOpts.colors = this.useColors;
 	// return util.inspect(v, this.inspectOpts);
-};
+// };
