@@ -5,7 +5,7 @@
  */
 
 function setup(env) {
-	// createDebug.debug = createDebug;
+	createDebug.debug = createDebug;
 	// createDebug.default = createDebug;
 	// createDebug.coerce = coerce;
 	// createDebug.disable = disable;
@@ -64,55 +64,55 @@ function setup(env) {
 	// function createDebug(namespace) {
 	// 	let prevTime;
 	//
-	// 	function debug(...args) {
-	// 		// Disabled?
-	// 		if (!debug.enabled) {
-	// 			return;
-	// 		}
-	//
-	// 		const self = debug;
-	//
-	// 		// Set `diff` timestamp
-	// 		const curr = Number(new Date());
-	// 		const ms = curr - (prevTime || curr);
-	// 		self.diff = ms;
-	// 		self.prev = prevTime;
-	// 		self.curr = curr;
-	// 		prevTime = curr;
-	//
-	// 		args[0] = createDebug.coerce(args[0]);
-	//
-	// 		if (typeof args[0] !== 'string') {
-	// 			// Anything else let's inspect with %O
-	// 			args.unshift('%O');
-	// 		}
-	//
-	// 		// Apply any `formatters` transformations
-	// 		let index = 0;
-	// 		args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format) => {
-	// 			// If we encounter an escaped % then don't increase the array index
-	// 			if (match === '%%') {
-	// 				return match;
-	// 			}
-	// 			index++;
-	// 			const formatter = createDebug.formatters[format];
-	// 			if (typeof formatter === 'function') {
-	// 				const val = args[index];
-	// 				match = formatter.call(self, val);
-	//
-	// 				// Now we need to remove `args[index]` since it's inlined in the `format`
-	// 				args.splice(index, 1);
-	// 				index--;
-	// 			}
-	// 			return match;
-	// 		});
-	//
-	// 		// Apply env-specific formatting (colors, etc.)
-	// 		createDebug.formatArgs.call(self, args);
-	//
-	// 		const logFn = self.log || createDebug.log;
-	// 		logFn.apply(self, args);
-	// 	}
+		function debug(...args) {
+			// Disabled?
+			// if (!debug.enabled) {
+			// 	return;
+			// }
+			//
+			// const self = debug;
+			//
+			// // Set `diff` timestamp
+			// const curr = Number(new Date());
+			// const ms = curr - (prevTime || curr);
+			// self.diff = ms;
+			// self.prev = prevTime;
+			// self.curr = curr;
+			// prevTime = curr;
+			//
+			// args[0] = createDebug.coerce(args[0]);
+			//
+			// if (typeof args[0] !== 'string') {
+			// 	// Anything else let's inspect with %O
+			// 	args.unshift('%O');
+			// }
+			//
+			// // Apply any `formatters` transformations
+			// let index = 0;
+			// args[0] = args[0].replace(/%([a-zA-Z%])/g, (match, format) => {
+			// 	// If we encounter an escaped % then don't increase the array index
+			// 	if (match === '%%') {
+			// 		return match;
+			// 	}
+			// 	index++;
+			// 	const formatter = createDebug.formatters[format];
+			// 	if (typeof formatter === 'function') {
+			// 		const val = args[index];
+			// 		match = formatter.call(self, val);
+			//
+			// 		// Now we need to remove `args[index]` since it's inlined in the `format`
+			// 		args.splice(index, 1);
+			// 		index--;
+			// 	}
+			// 	return match;
+			// });
+			//
+			// // Apply env-specific formatting (colors, etc.)
+			// createDebug.formatArgs.call(self, args);
+			//
+			// const logFn = self.log || createDebug.log;
+			// logFn.apply(self, args);
+		}
 	//
 	// 	debug.namespace = namespace;
 	// 	debug.enabled = createDebug.enabled(namespace);
@@ -258,7 +258,7 @@ function setup(env) {
 
 	// createDebug.enable(createDebug.load());
 
-	// return createDebug;
+	return createDebug;
 }
 
 module.exports = setup;
