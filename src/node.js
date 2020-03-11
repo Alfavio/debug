@@ -236,7 +236,7 @@ function init(debug) {
 
 module.exports = require('./common')(exports);
 
-const {formatters} = module.exports;
+// const {formatters} = module.exports;
 
 /**
  * Map %o to `util.inspect()`, all on a single line.
